@@ -17,16 +17,6 @@ require_once __DIR__ . '/components/event.php';
     <title>Сафонова Наталья Николаевна</title>
     <link href="/style.css" rel="stylesheet">
     <style>
-        @media (max-width: 768px) {
-            .mobile-menu {
-                display: none;
-            }
-
-            .mobile-menu.active {
-                display: flex;
-            }
-        }
-
         #achievements-carousel {
             scrollbar-width: thin;
             scrollbar-color: #2f2d2c;
@@ -39,17 +29,10 @@ require_once __DIR__ . '/components/event.php';
 
 </head>
 
-<body class="font-manrope max-w-280 mx-auto px-4 md:px-0">
-    <header class="flex flex-col md:flex-row items-center justify-between py-9 gap-4">
-        <div class="flex items-center justify-between w-full md:w-auto">
-            <h1 class="font-semibold text-lg md:text-xl tracking-wider">Наталья Николаевна Сафонова</h1>
-            <button id="menu-toggle" class="md:hidden">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-                </svg>
-            </button>
-        </div>
-        <nav class="mobile-menu flex-col md:flex md:flex-row gap-6 md:gap-9 font-medium w-full md:w-auto items-center">
+<body class="font-manrope max-w-280 mx-auto ">
+    <header class="flex  items-center justify-between py-9 ">
+        <h1 class=" font-semibold text-xl tracking-wider">Наталья Николаевна Сафонова</h1>
+        <nav class="flex gap-9 font-medium ">
             <a class="lowercase hover:scale-90 cursor-pointer transition-transform duration-150" href="#about">О себе</a>
             <a class="lowercase hover:scale-90 cursor-pointer transition-transform duration-150" href="#edu">Образование</a>
             <a class="lowercase hover:scale-90 cursor-pointer transition-transform duration-150" href="#win">Достижения</a>
@@ -59,8 +42,8 @@ require_once __DIR__ . '/components/event.php';
         </nav>
     </header>
 
-    <section class="flex flex-col md:flex-row gap-12 bg-primary-500 rounded-[50px]">
-        <div class="flex flex-col basis-full md:basis-1/2 gap-12 md:gap-20 p-6 md:my-9 md:ml-9">
+    <section class=" gap-12  flex bg-primary-500 rounded-[50px]">
+        <div class="flex flex-col basis-1/2 gap-20 my-9 ml-9">
             <div class="flex justify-between items-center ">
                 <h1 class="font-semibold tracking-wider">Контактная
                     <br>информация
@@ -115,10 +98,10 @@ require_once __DIR__ . '/components/event.php';
                 <a class="bg-secondary-700 py-3 px-10 text-center mt-2 text-sm text-white rounded-full transition-all duration-150 hover:-translate-y-[2px] hover:cursor-pointer" href="#about">узнать больше</a>
             </div>
         </div>
-        <img src="assets/preview.jpg" class="w-full md:w-auto md:h-[750px] aspect-[6/8] rounded-[50px] object-cover">
+        <img src="assets/preview.jpg" class=" h-[750px] aspect-[6/8] rounded-[50px]"></img>
     </section>
 
-    <section class="my-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+    <section class=" my-12 flex gap-6">
         <img src="assets/personal_skill.jpg" class="h-[320px] basis-1/4 rounded-2xl"></img>
         <div class="rounded-3xl bg-primary-500 basis-1/4 py-8 px-4 flex flex-col justify-between">
             <h3 class="font-medium text-lg text-ptimary-700 mt-6 tracking-wider text-center">

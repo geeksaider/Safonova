@@ -1,8 +1,8 @@
 <?php
 function getDiplom(string $pdfUrl, string $title, string $university, string $year): string
 {
-    $u = htmlspecialchars($pdfUrl, ENT_QUOTES);
-    return <<<HTML
+  $u = htmlspecialchars($pdfUrl, ENT_QUOTES);
+  return <<<HTML
  
 <a 
   href="$u" 

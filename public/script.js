@@ -36,18 +36,3 @@ eventsIndicators.forEach((el, id) => {
 });
 
 updateCarousel();
-
-// Mobile menu
-const menuToggle = document.getElementById("menu-toggle");
-const mobileMenu = document.querySelector(".mobile-menu");
-
-menuToggle.addEventListener("click", () => {
-  mobileMenu.classList.toggle("active");
-});
-
-// Close menu when clicking a link
-document.querySelectorAll(".mobile-menu a").forEach((link) => {
-  link.addEventListener("click", () => {
-    mobileMenu.classList.remove("active");
-  });
-});
