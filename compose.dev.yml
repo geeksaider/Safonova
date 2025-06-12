@@ -1,0 +1,22 @@
+services:
+  caddy:
+    build:
+      context: .
+      dockerfile: ./docker/Dockerfile.caddy.dev
+    ports:
+      - 80:80
+    volumes:
+      - ./src:/var/www/public
+      - ./public:/var/www/public
+      - ./src:/tailwind/src
+    depends_on:
+      - php
+    restart: unless-stopped
+
+  php:
+    build:
+      context: .
+      dockerfile: ./docker/Dockerfile.php
+    volumes:
+      - ./src:/var/www/public
+    restart: unless-stopped

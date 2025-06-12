@@ -1,0 +1,11 @@
+{
+  "name": "safonova",
+  "version": "1.0.0",
+  "scripts": {
+    "build": "npx @tailwindcss/cli -i ./src/tailwind.css -o /var/www/public/style.css --minify"
+  },
+  "dependencies": {
+    "@tailwindcss/cli": "^4.1.8",
+    "tailwindcss": "^4.1.8"
+  }
+}

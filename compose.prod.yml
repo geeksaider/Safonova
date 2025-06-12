@@ -1,0 +1,22 @@
+services:
+  caddy:
+    build:
+      context: .
+      dockerfile: ./docker/Dockerfile.caddy.prod
+    ports:
+      - 80:80
+      - 443:443
+    volumes:
+      - caddy_data:/data
+    depends_on:
+      - php
+    restart: unless-stopped
+
+  php:
+    build: 
+      context: .
+      dockerfile: ./docker/Dockerfile.php
+    restart: unless-stopped
+
+volumes:
+  caddy_data:
