@@ -14,9 +14,11 @@ require_once __DIR__ . '/components/event.php';
 
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Сафонова Наталья Николаевна</title>
     <link href="/style.css" rel="stylesheet">
     <style>
+        /* Прокрутка для карусели достижений */
         #achievements-carousel {
             scrollbar-width: thin;
             scrollbar-color: #2f2d2c;
@@ -24,6 +26,109 @@ require_once __DIR__ . '/components/event.php';
 
         #achievements-carousel::-webkit-scrollbar {
             height: 6px;
+        }
+
+
+
+
+        @media (max-width: 1024px) {
+            body {
+                padding: 0 1rem;
+            }
+
+            header {
+                flex-direction: column;
+                align-items: center;
+                gap: 1rem;
+
+                nav {
+                    flex-direction: column;
+                    gap: 0.5rem;
+                    font-size: 0.875rem;
+                    text-align: center;
+                }
+            }
+
+
+            #about_parent {
+                flex-direction: column-reverse;
+                align-items: center;
+                justify-content: center;
+
+
+            }
+
+            #about_parent__header {
+                font-size: 1.5rem;
+                text-align: center;
+            }
+
+            #about_parent__text {
+                font-size: 0.875rem;
+            }
+
+            #about_parent__img {
+                height: auto;
+                max-width: 100%;
+
+            }
+
+            #about_parent__text-container {
+                padding: 20px;
+            }
+
+
+            #skills_parent {
+                display: grid;
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                grid-template-rows: auto;
+                gap: 1rem;
+                justify-items: center;
+                align-content: center;
+            }
+
+            #skill_list {
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            /* Карусель событий */
+            #events-carousel_parent {
+                text-align: center;
+                justify-content: center;
+                font-size: 0.875rem;
+            }
+
+            /* Внешние активности */
+            #outside_activities {
+                flex-direction: column;
+            }
+
+            #strange_photo {
+                width: 100%;
+                height: auto;
+            }
+
+            #event_1 {
+                display: none
+            }
+
+            #event_2 {
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 400px) {
+            #skills_parent {
+                display: grid;
+                grid-template-columns: repeat(1, minmax(0, 1fr));
+                grid-template-rows: auto;
+                gap: 1rem;
+                margin-top: 0px;
+                justify-items: center;
+                align-content: center;
+            }
         }
     </style>
 
@@ -42,8 +147,8 @@ require_once __DIR__ . '/components/event.php';
         </nav>
     </header>
 
-    <section class=" gap-12  flex bg-primary-500 rounded-[50px]">
-        <div class="flex flex-col basis-1/2 gap-20 my-9 ml-9">
+    <section class=" gap-12  flex bg-primary-500 rounded-[50px] max-sm:mb-4" id="about_parent">
+        <div class="flex flex-col basis-1/2 gap-20 my-9 md:ml-9 max-md:p-5" id="about_parent__text-container">
             <div class="flex justify-between items-center ">
                 <h1 class="font-semibold tracking-wider">Контактная
                     <br>информация
@@ -81,8 +186,8 @@ require_once __DIR__ . '/components/event.php';
 
             </div>
             <div class="flex flex-col gap-6 justify-center items-center ">
-                <h1 class="text-4xl text-left  ">Преподаватель математических дисциплин</h1>
-                <div class="text-justify flex flex-col gap-2 text-sm text-secondary-700">
+                <h1 class="text-4xl text-left  " id="about_parent__header">Преподаватель математических дисциплин</h1>
+                <div class="text-justify flex flex-col gap-2 text-sm text-secondary-700" id="about_parent__text">
                     <span>
                         Место работы: Колледж Информатики и программирования Финансового университета при Правительстве РФ
                     </span>
@@ -98,17 +203,17 @@ require_once __DIR__ . '/components/event.php';
                 <a class="bg-secondary-700 py-3 px-10 text-center mt-2 text-sm text-white rounded-full transition-all duration-150 hover:-translate-y-[2px] hover:cursor-pointer" href="#about">узнать больше</a>
             </div>
         </div>
-        <img src="assets/preview.jpg" class=" h-[750px] aspect-[6/8] rounded-[50px]"></img>
+        <img src="assets/preview.jpg" class=" h-[750px] aspect-[6/8] rounded-[50px]" id="about_parent__img"></img>
     </section>
 
-    <section class=" my-12 flex gap-6">
-        <img src="assets/personal_skill.jpg" class="h-[320px] basis-1/4 rounded-2xl"></img>
-        <div class="rounded-3xl bg-primary-500 basis-1/4 py-8 px-4 flex flex-col justify-between">
-            <h3 class="font-medium text-lg text-ptimary-700 mt-6 tracking-wider text-center">
+    <section class=" my-12 flex gap-6" id="skills_parent">
+        <img src="assets/personal_skill.jpg" class="h-[320px] basis-1/4 rounded-2xl max-md:h-auto"></img>
+        <div class="rounded-3xl bg-primary-500 basis-1/4 py-8 px-4 flex flex-col justify-between max-sm:gap-6">
+            <h3 class="font-medium text-lg text-ptimary-700 sm:mt-6 tracking-wider text-center ">
                 Личные навыки
             </h3>
 
-            <ul class="flex flex-wrap justify-center gap-2">
+            <ul class="flex flex-wrap justify-center gap-2" id="skills_list">
                 <?php echo getSkill('Креативность', 'black'); ?>
                 <?php echo getSkill('Эмпатия ', 'black'); ?>
                 <?php echo getSkill('Ответственность', 'black'); ?>
@@ -117,12 +222,12 @@ require_once __DIR__ . '/components/event.php';
             </ul>
 
         </div>
-        <img src="assets/proff_skill.jpg" class=" rounded-2xl bg-stone-500 h-[320px] basis-1/4 "></img>
-        <div class="rounded-3xl bg-secondary-700 basis-1/4 py-8 px-4 flex flex-col justify-between">
-            <h3 class="font-medium text-white text-lg text-center mt-6">
+        <img src="assets/proff_skill.jpg" class=" rounded-2xl bg-stone-500 h-[320px] basis-1/4  max-md:h-auto max-md:my-auto"></img>
+        <div class="rounded-3xl bg-secondary-700 basis-1/4 py-8 px-4 flex flex-col justify-between max-sm:gap-6">
+            <h3 class="font-medium text-white text-lg text-center sm:mt-6 ">
                 Профессиональные навыки
             </h3>
-            <ul class="flex flex-wrap justify-center gap-2">
+            <ul class="flex flex-wrap justify-center gap-2" id="skills_list">
                 <?php echo getSkill('Экспертность', 'white'); ?>
                 <?php echo getSkill('Методика', 'white'); ?>
                 <?php echo getSkill('Технологии ', 'white'); ?>
@@ -134,11 +239,11 @@ require_once __DIR__ . '/components/event.php';
 
     <h2 class="text-left text-5xl font-semibold tracking-wider my-12 " id='about'>О себе</h2>
 
-    <section class=" gap-5  flex bg-primary-500 rounded-[50px]">
-        <img src="assets/about.jpg" class=" h-[750px] aspect-[6/8] rounded-[50px]"></img>
+    <section class=" gap-5  flex bg-primary-500 rounded-[50px]" id="about_parent">
+        <img src="assets/about.jpg" class=" h-[750px] aspect-[6/8] rounded-[50px]" id="about_parent__img"></img>
         <div class="flex flex-col basis-1/2  gap-3 mt-12 px-9 text-left ">
             <h3 class="text-[30px] font-medium">Краткая биография</h3>
-            <div class="flex flex-col gap-4 mb-4">
+            <div class="flex flex-col gap-4 mb-4" id="about_parent__text">
                 <p>
                     Я преподаватель математических дисциплин со стажем работы 25 лет.
                 </p>
@@ -222,9 +327,9 @@ require_once __DIR__ . '/components/event.php';
         <?php echo getMaterial('Методическая разработка по теме:', ' «Вычисление эмпирических числовых характеристик», Педагогический альманах,  Сборник публикаций №17-2025.', 'https://www.pedalmanac.ru/472905'); ?>
     </div>
 
-    <h2 class="text-left text-5xl font-semibold tracking-wider my-12" id="events">События</h2>
+    <h2 class="text-left text-5xl font-semibold tracking-wider my-12 " id="events">События</h2>
 
-    <div class="relative max-w-4xl mx-auto">
+    <div class="relative max-w-4xl mx-auto" id="events-carousel_parent">
         <div id="events-carousel" class="overflow-hidden">
             <div class="flex transition-transform duration-500">
                 <?php echo getEvent(
@@ -296,18 +401,23 @@ require_once __DIR__ . '/components/event.php';
                 ); ?>
             </div>
 
-            <button id="events-prev" class="absolute -left-12 top-1/2 -translate-y-1/2 bg-primary-500/80 hover:bg-secondary-700 text-secondary-700 hover:text-white rounded-full p-3 transition-all duration-300">
+            <button id="events-prev__mobile" class="absolute -left-12 top-1/2 -translate-y-1/2 bg-primary-500/80 hover:bg-secondary-700 text-secondary-700 hover:text-white rounded-full p-3 transition-all duration-300 max-md:hidden">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
                 </svg>
             </button>
-            <button id="events-next" class="absolute -right-12 top-1/2 -translate-y-1/2 bg-primary-500/80 hover:bg-secondary-700 text-secondary-700 hover:text-white rounded-full p-3 transition-all duration-300">
+            <button id="events-next__mobile" class="absolute -right-12 top-1/2 -translate-y-1/2 bg-primary-500/80 hover:bg-secondary-700 text-secondary-700 hover:text-white rounded-full p-3 transition-all duration-300 max-md:hidden">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
                 </svg>
             </button>
 
             <div class="flex justify-center  mt-6 gap-2">
+                <button id="events-prev" class="-translate-y-1/2 bg-primary-500/80 hover:bg-secondary-700 text-secondary-700 hover:text-white rounded-full p-3 transition-all duration-300 md:hidden">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+                    </svg>
+                </button>
                 <div class="events-indicator w-2 h-2 rounded-full bg-gray-300 cursor-pointer transition-all duration-300" data-index="0"></div>
                 <div class="events-indicator w-2 h-2 rounded-full bg-gray-300 cursor-pointer transition-all duration-300" data-index="1"></div>
                 <div class="events-indicator w-2 h-2 rounded-full bg-gray-300 cursor-pointer transition-all duration-300" data-index="2"></div>
@@ -316,13 +426,18 @@ require_once __DIR__ . '/components/event.php';
                 <div class="events-indicator w-2 h-2 rounded-full bg-gray-300 cursor-pointer transition-all duration-300" data-index="5"></div>
                 <div class="events-indicator w-2 h-2 rounded-full bg-gray-300 cursor-pointer transition-all duration-300" data-index="6"></div>
                 <div class="events-indicator w-2 h-2 rounded-full bg-gray-300 cursor-pointer transition-all duration-300" data-index="7"></div>
+                <button id="events-next" class="-translate-y-1/2 bg-primary-500/80 hover:bg-secondary-700 text-secondary-700 hover:text-white rounded-full p-3 transition-all duration-300 md:hidden">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                    </svg>
+                </button>
             </div>
         </div>
 
     </div>
-    <h2 class="text-left text-5xl font-semibold tracking-wider my-12">Внеучебеная деятельность</h2>
+    <h2 class="text-left text-5xl font-semibold tracking-wider my-12">Внеучебная деятельность</h2>
 
-    <div class="flex gap-20">
+    <div class="flex gap-20" id="outside_activities">
         <div class="bg-primary-500 rounded-[38px] flex flex-col justify-center gap-4 p-8 basis-1/2">
 
             <h3 class="text-xl font-semibold mb-4">
@@ -337,7 +452,7 @@ require_once __DIR__ . '/components/event.php';
             </a>
 
         </div>
-        <div class="bg-stone-800 h-[400px] aspect-[1.5/1] rounded-[50px]"></div>
+        <div class="bg-stone-800 h-[400px] aspect-[1.5/1] rounded-[50px]" id="strange_photo"></div>
     </div>
 
     <h2 class="text-left text-5xl font-semibold tracking-wider my-12" id="gallery">Фотогалерея</h2>

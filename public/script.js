@@ -2,10 +2,10 @@ const eventsCarousel = document.querySelector("#events-carousel > div");
 const slides = eventsCarousel.children;
 const prevBtn = document.getElementById("events-prev");
 const nextBtn = document.getElementById("events-next");
+const prevBtnMob = document.getElementById("events-prev__mobile");
+const nextBtnMob = document.getElementById("events-next__mobile");
 const eventsIndicators = document.querySelectorAll(".events-indicator");
 const total = slides.length;
-
-// ВТОРАЯ КАРУСЕЛЬ
 
 let current = 0;
 
@@ -20,6 +20,15 @@ function updateCarousel() {
 
 prevBtn.onclick = function () {
   current = (current - 1 + total) % total;
+  updateCarousel();
+};
+
+prevBtnMob.onclick = function () {
+  current = (current - 1 + total) % total;
+  updateCarousel();
+};
+nextBtnMob.onclick = function () {
+  current = (current + 1) % total;
   updateCarousel();
 };
 
