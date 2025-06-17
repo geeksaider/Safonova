@@ -29,10 +29,10 @@ require_once __DIR__ . '/components/event.php';
 
 </head>
 
-<body class="font-manrope max-w-280 mx-auto ">
-    <header class="flex  items-center justify-between py-9 ">
+<body class="font-manrope max-w-280 mx-auto px-4">
+    <header class="flex flex-col lg:flex-row items-center justify-between py-6 lg:py-9 gap-4 lg:gap-0">
         <h1 class=" font-semibold text-xl tracking-wider">Наталья Николаевна Сафонова</h1>
-        <nav class="flex gap-9 font-medium ">
+        <nav class="flex flex-wrap justify-center gap-4 lg:gap-9 font-medium ">
             <a class="lowercase hover:scale-90 cursor-pointer transition-transform duration-150" href="#about">О себе</a>
             <a class="lowercase hover:scale-90 cursor-pointer transition-transform duration-150" href="#edu">Образование</a>
             <a class="lowercase hover:scale-90 cursor-pointer transition-transform duration-150" href="#win">Достижения</a>
@@ -42,9 +42,9 @@ require_once __DIR__ . '/components/event.php';
         </nav>
     </header>
 
-    <section class=" gap-12  flex bg-primary-500 rounded-[50px]">
-        <div class="flex flex-col basis-1/2 gap-20 my-9 ml-9">
-            <div class="flex justify-between items-center ">
+    <section class=" gap-12  flex flex-col lg:flex-row bg-primary-500 rounded-[50px]">
+        <div class="flex flex-col lg:basis-1/2 gap-12 lg:gap-20 my-9 px-6 lg:ml-9 lg:px-0">
+            <div class="flex flex-col sm:flex-row justify-between items-center gap-4">
                 <h1 class="font-semibold tracking-wider">Контактная
                     <br>информация
                 </h1>
@@ -81,7 +81,7 @@ require_once __DIR__ . '/components/event.php';
 
             </div>
             <div class="flex flex-col gap-6 justify-center items-center ">
-                <h1 class="text-4xl text-left  ">Преподаватель математических дисциплин</h1>
+                <h1 class="text-3xl lg:text-4xl text-left  ">Преподаватель математических дисциплин</h1>
                 <div class="text-justify flex flex-col gap-2 text-sm text-secondary-700">
                     <span>
                         Место работы: Колледж Информатики и программирования Финансового университета при Правительстве РФ
@@ -97,18 +97,16 @@ require_once __DIR__ . '/components/event.php';
                 </div>
                 <a class="bg-secondary-700 py-3 px-10 text-center mt-2 text-sm text-white rounded-full transition-all duration-150 hover:-translate-y-[2px] hover:cursor-pointer" href="#about">узнать больше</a>
             </div>
-        </div>
-        <img src="assets/preview.jpg" class=" h-[750px] aspect-[6/8] rounded-[50px]"></img>
     </section>
 
-    <section class=" my-12 flex gap-6">
-        <img src="assets/personal_skill.jpg" class="h-[320px] basis-1/4 rounded-2xl"></img>
-        <div class="rounded-3xl bg-primary-500 basis-1/4 py-8 px-4 flex flex-col justify-between">
-            <h3 class="font-medium text-lg text-ptimary-700 mt-6 tracking-wider text-center">
+    <section class=" my-12 flex flex-col md:flex-row lg:flex-row gap-6">
+        <img src="assets/personal_skill.jpg" class="w-full md:w-1/2 lg:w-auto lg:h-[320px] xl:h-[400px] object-cover lg:basis-1/4 rounded-2xl"></img>
+        <div class="rounded-3xl bg-primary-500 lg:basis-1/4 p-8 md:p-12 lg:p-16 xl:p-20 px-4 md:px-8 lg:px-12 xl:px-16 flex flex-col justify-between">
+            <h3 class="font-medium text-lg md:text-xl lg:text-2xl xl:text-3xl text-ptimary-700 mt-6 tracking-wider text-center">
                 Личные навыки
             </h3>
 
-            <ul class="flex flex-wrap justify-center gap-2">
+            <ul class="flex flex-wrap justify-center gap-2 md:gap-4 lg:gap-6 xl:gap-8">
                 <?php echo getSkill('Креативность', 'black'); ?>
                 <?php echo getSkill('Эмпатия ', 'black'); ?>
                 <?php echo getSkill('Ответственность', 'black'); ?>
@@ -117,31 +115,26 @@ require_once __DIR__ . '/components/event.php';
             </ul>
 
         </div>
-        <img src="assets/proff_skill.jpg" class=" rounded-2xl bg-stone-500 h-[320px] basis-1/4 "></img>
-        <div class="rounded-3xl bg-secondary-700 basis-1/4 py-8 px-4 flex flex-col justify-between">
-            <h3 class="font-medium text-white text-lg text-center mt-6">
+        <img src="assets/proff_skill.jpg" class=" rounded-2xl bg-stone-500 h-[320px] md:h-[400px] lg:h-[500px] xl:h-[600px] basis-1/4 "></img>
+        <div class="rounded-3xl bg-secondary-700 lg:basis-1/4 p-8 md:p-12 lg:p-16 xl:p-20 text-white flex-col justify-between">
+            <h3 class="font-medium text-white text-lg md:text-xl lg:text-2xl xl:text-3xl text-center mt-6">
                 Профессиональные навыки
             </h3>
-            <ul class="flex flex-wrap justify-center gap-2">
+            <ul class="flex flex-wrap justify-center gap-2 md:gap-4 lg:gap-6 xl:gap-8">
                 <?php echo getSkill('Экспертность', 'white'); ?>
-                <?php echo getSkill('Методика', 'white'); ?>
-                <?php echo getSkill('Технологии ', 'white'); ?>
-                <?php echo getSkill('Результаты ', 'white'); ?>
+{{ ... }}
 
-            </ul>
-        </div>
-    </section>
+    <h2 class="text-left text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-semibold tracking-wider my-12 " id='about'>О себе</h2>
 
-    <h2 class="text-left text-5xl font-semibold tracking-wider my-12 " id='about'>О себе</h2>
-
-    <section class=" gap-5  flex bg-primary-500 rounded-[50px]">
-        <img src="assets/about.jpg" class=" h-[750px] aspect-[6/8] rounded-[50px]"></img>
-        <div class="flex flex-col basis-1/2  gap-3 mt-12 px-9 text-left ">
-            <h3 class="text-[30px] font-medium">Краткая биография</h3>
-            <div class="flex flex-col gap-4 mb-4">
+    <section class=" gap-5  flex flex-col-reverse md:flex-row lg:flex-row bg-primary-500 rounded-[50px]">
+        <img src="assets/about.jpg" class="w-full md:w-1/2 lg:w-auto lg:h-[750px] xl:h-[900px] aspect-[6/8] rounded-t-[50px] lg:rounded-r-none lg:rounded-l-[50px]"></img>
+        <div class="flex flex-col lg:basis-1/2 gap-8 md:gap-12 lg:gap-16 xl:gap-20 my-9 px-6 md:px-12 lg:px-16 xl:px-20 lg:mr-9 lg:px-0" text-left ">
+            <h3 class="text-[30px] md:text-[40px] lg:text-[50px] xl:text-[60px] font-medium">Краткая биография</h3>
+            <div class="flex flex-col gap-4 md:gap-6 lg:gap-8 xl:gap-10 mb-4">
                 <p>
                     Я преподаватель математических дисциплин со стажем работы 25 лет.
                 </p>
+{{ ... }}
                 <p>
                     Я убеждена, что математика — это не просто абстрактная наука, а универсальный язык, который открывает двери в мир высоких технологий, научных открытий и успешной карьеры. Она развивает критическое мышление, учит решать сложные задачи и находить нестандартные подходы в любой сфере жизни.
                 </p>
@@ -164,7 +157,7 @@ require_once __DIR__ . '/components/event.php';
         </div>
     </section>
 
-    <h2 class="text-left text-5xl font-semibold tracking-wider my-12 " id="edu">Образование</h2>
+    <h2 class="text-left text-4xl md:text-5xl font-semibold tracking-wider my-12 " id="edu">Образование</h2>
     <section class="grid grid-cols-1 md:grid-cols-2 gap-6  ">
         <div class="bg-primary-500 rounded-[38px] flex flex-col gap-4 p-8">
             <div class='flex flex-col gap-3'>
@@ -191,7 +184,7 @@ require_once __DIR__ . '/components/event.php';
             </div>
         </div>
     </section>
-    <h2 class="text-left text-5xl font-semibold tracking-wider my-12 " id="win">Достижения</h2>
+    <h2 class="text-left text-4xl md:text-5xl font-semibold tracking-wider my-12 " id="win">Достижения</h2>
     <div class="relative">
         <div id="achievements-carousel" class="mt-2 flex snap-x snap-mandatory overflow-x-auto scroll-smooth gap-4 px-4 py-4 cursor-grab">
             <?php
@@ -296,12 +289,12 @@ require_once __DIR__ . '/components/event.php';
                 ); ?>
             </div>
 
-            <button id="events-prev" class="absolute -left-12 top-1/2 -translate-y-1/2 bg-primary-500/80 hover:bg-secondary-700 text-secondary-700 hover:text-white rounded-full p-3 transition-all duration-300">
+            <button id="events-prev" class="absolute -left-4 md:-left-12 top-1/2 -translate-y-1/2 bg-primary-500/80 hover:bg-secondary-700 text-secondary-700 hover:text-white rounded-full p-3 transition-all duration-300">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
                 </svg>
             </button>
-            <button id="events-next" class="absolute -right-12 top-1/2 -translate-y-1/2 bg-primary-500/80 hover:bg-secondary-700 text-secondary-700 hover:text-white rounded-full p-3 transition-all duration-300">
+            <button id="events-next" class="absolute -right-4 md:-right-12 top-1/2 -translate-y-1/2 bg-primary-500/80 hover:bg-secondary-700 text-secondary-700 hover:text-white rounded-full p-3 transition-all duration-300">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
                 </svg>
@@ -322,8 +315,8 @@ require_once __DIR__ . '/components/event.php';
     </div>
     <h2 class="text-left text-5xl font-semibold tracking-wider my-12">Внеучебеная деятельность</h2>
 
-    <div class="flex gap-20">
-        <div class="bg-primary-500 rounded-[38px] flex flex-col justify-center gap-4 p-8 basis-1/2">
+    <div class="flex flex-col lg:flex-row gap-10 lg:gap-20">
+        <div class="bg-primary-500 rounded-[38px] flex flex-col justify-center gap-4 p-8 lg:basis-1/2">
 
             <h3 class="text-xl font-semibold mb-4">
                 Всероссийская олимпиада по математике и алгоритмике.</h3>
@@ -337,7 +330,7 @@ require_once __DIR__ . '/components/event.php';
             </a>
 
         </div>
-        <div class="bg-stone-800 h-[400px] aspect-[1.5/1] rounded-[50px]"></div>
+        <div class="bg-stone-800 h-[250px] md:h-[400px] w-full lg:aspect-[1.5/1] rounded-[50px]"></div>
     </div>
 
     <h2 class="text-left text-5xl font-semibold tracking-wider my-12" id="gallery">Фотогалерея</h2>
